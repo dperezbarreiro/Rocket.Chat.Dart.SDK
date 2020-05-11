@@ -9,11 +9,17 @@ import 'package:ddp/ddp.dart' as ddp;
 import 'package:rocket_chat_dart/models/models.dart';
 
 part 'channels.dart';
+
 part 'emoji.dart';
+
 part 'events.dart';
+
 part 'messages.dart';
+
 part 'permissons.dart';
+
 part 'subscriptions.dart';
+
 part 'users.dart';
 
 abstract class _DdpClientWrapper {
@@ -69,6 +75,9 @@ class Client extends Object
 
   void addStatusListener(_StatusListener listener) =>
       this._getDdpClient().addStatusListener(listener);
+
+  void removeStatusListener(_StatusListener listener) =>
+      this._getDdpClient().removeStatusListener(listener);
 }
 
 final Random _random = Random(DateTime.now().millisecondsSinceEpoch);
