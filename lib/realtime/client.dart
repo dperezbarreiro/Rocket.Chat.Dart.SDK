@@ -21,6 +21,7 @@ part 'permissons.dart';
 part 'subscriptions.dart';
 
 part 'users.dart';
+part 'livechat.dart';
 
 abstract class _DdpClientWrapper {
   ddp.DdpClient _getDdpClient();
@@ -36,7 +37,8 @@ class Client extends Object
         _ClientPermissionsMixin,
         _ClientMessagesMixin,
         _ClientUsersMixin,
-        _ClientSubscriptionsMixin
+        _ClientSubscriptionsMixin,
+        _ClientLiveChatMixin
     implements _DdpClientWrapper {
   Client(String name, Uri uri, bool debug) {
     String wsUrl = 'ws';
