@@ -1,7 +1,7 @@
 part of rest;
 
 abstract class _ClientOmnichannelMixin implements _ClientWrapper {
-  Future<RoomMessageHistory> messagesHistory(
+  Future<RoomMessageHistory> liveChatMessagesHistory(
     String roomId,
     String token, {
     DateTime ts,
@@ -25,7 +25,7 @@ abstract class _ClientOmnichannelMixin implements _ClientWrapper {
     }
 
     http
-        .get('${_getUrl()}/messages.history/$roomId?${query.toString()}')
+        .get('${_getUrl()}/livechat/messages.history/$roomId?${query.toString()}')
         .then((response) {
       _hackResponseHeader(response);
 
