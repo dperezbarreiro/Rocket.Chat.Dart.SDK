@@ -8,13 +8,22 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:rocket_chat_dart/models/models.dart';
 
 part 'channels.dart';
+
 part 'chat.dart';
+
 part 'client.g.dart';
+
 part 'groups.dart';
+
 part 'im.dart';
+
 part 'rooms.dart';
+
 part 'subscriptions.dart';
+
 part 'users.dart';
+
+part 'omnichannel.dart';
 
 class _AuthInfo {
   _AuthInfo(this._id, this._token);
@@ -42,7 +51,8 @@ class Client extends Object
         _ClientSubscriptionsMixin,
         _ClientIMMixin,
         _ClientChatMixin,
-        _ClientGroupsMixin
+        _ClientGroupsMixin,
+        _ClientOmnichannelMixin
     implements _ClientWrapper {
   final String protocol;
   final String host;
